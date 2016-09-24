@@ -15,3 +15,8 @@
 /log/*
 !/log/.keep
 /tmp
+
+
+sftp-config.json
+/public/backend_template/*
+/public/my/*

@@ -22,52 +22,6 @@ ActiveRecord::Schema.define(version: 20160113092310) do
     t.string   "password_digest", limit: 255
   end
 
-  create_table "attachments", force: :cascade do |t|
-    t.string   "attachmenttable_type", limit: 255
-    t.string   "attachmenttable_id",   limit: 255
-    t.string   "file",                 limit: 255
-    t.boolean  "del_mark",                         default: false
-    t.integer  "rank",                 limit: 4
-    t.datetime "created_at",                                       null: false
-    t.datetime "updated_at",                                       null: false
-  end
-
-  create_table "categories", force: :cascade do |t|
-    t.string   "name",          limit: 255
-    t.integer  "category_type", limit: 4
-    t.integer  "rank",          limit: 4
-    t.boolean  "del_mark",                  default: false
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
-  end
-
-  create_table "contents", force: :cascade do |t|
-    t.string   "title",        limit: 255
-    t.integer  "category_id",  limit: 4
-    t.integer  "content_type", limit: 4
-    t.text     "content",      limit: 65535
-    t.string   "intro",        limit: 255
-    t.integer  "rank",         limit: 4,     default: 0
-    t.boolean  "del_mark",                   default: false
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
-    t.string   "link",         limit: 255
-  end
-
-  create_table "navs", force: :cascade do |t|
-    t.string   "url",            limit: 255
-    t.integer  "nav_type",       limit: 4
-    t.integer  "rank",           limit: 4
-    t.integer  "parent_id",      limit: 4
-    t.integer  "lft",            limit: 4
-    t.integer  "rgt",            limit: 4
-    t.integer  "depth",          limit: 4,   default: 0
-    t.integer  "children_count", limit: 4,   default: 0
-    t.boolean  "del_mark",                   default: false
-    t.string   "name",           limit: 255
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
-  end
 
   create_table "systems", force: :cascade do |t|
     t.string   "name",        limit: 255
