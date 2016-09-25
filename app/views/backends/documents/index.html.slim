@@ -1,0 +1,19 @@
+.files
+  h1 檔案區
+  .col-md-12
+    section.panel
+      header.panel-heading
+        | 課件列表
+        table.table.table-striped
+          thead
+            tr
+              th.col-md-3 日期
+              th.col-md-3 簡述
+              th.col-md-6 課件
+          tbody
+            -@documents.each do |doc| 
+              tr
+                td.col-md-3 =doc.created_at.strftime('%F')
+                td.col-md-3 =doc.info
+                td.col-md-6 =link_to doc.file.file.identifier  , doc.file.url
+            end 

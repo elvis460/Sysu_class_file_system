@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,30 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160113092310) do
+ActiveRecord::Schema.define(version: 20160924144528) do
 
-  create_table "admins", force: :cascade do |t|
-    t.string   "name",            limit: 255
-    t.string   "account",         limit: 255
-    t.boolean  "del_mark",                    default: false
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
-    t.string   "password_digest", limit: 255
+  create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",                                         collation: "latin1_swedish_ci"
+    t.string   "account",                                      collation: "latin1_swedish_ci"
+    t.boolean  "del_mark",        default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "password_digest",                              collation: "latin1_swedish_ci"
   end
 
+  create_table "documents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "file"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.text     "info",       limit: 65535
+  end
 
-  create_table "systems", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.string   "title",       limit: 255
-    t.string   "description", limit: 255
-    t.string   "keyword",     limit: 255
-    t.string   "email",       limit: 255
-    t.string   "phone",       limit: 255
-    t.string   "fax",         limit: 255
-    t.string   "address",     limit: 255
-    t.string   "facebook",    limit: 255
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+  create_table "systems", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",                     collation: "latin1_swedish_ci"
+    t.string   "title",                    collation: "latin1_swedish_ci"
+    t.string   "description",              collation: "latin1_swedish_ci"
+    t.string   "keyword",                  collation: "latin1_swedish_ci"
+    t.string   "email",                    collation: "latin1_swedish_ci"
+    t.string   "phone",                    collation: "latin1_swedish_ci"
+    t.string   "fax",                      collation: "latin1_swedish_ci"
+    t.string   "address",                  collation: "latin1_swedish_ci"
+    t.string   "facebook",                 collation: "latin1_swedish_ci"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

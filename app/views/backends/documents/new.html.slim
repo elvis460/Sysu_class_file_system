@@ -1,0 +1,11 @@
+.main
+  h1 上傳
+  =form_for @document , url: backends_documents_path do |form|
+    p 簡述
+    =form.text_field 'info'
+    br
+    =form.file_field 'file'
+    br
+    =form.submit '上傳' , class: 'btn btn-danger'
+  end
+

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources 'backends',only: [:index]
   namespace :backends do
     root to: 'backends#index'
-
+    resources 'documents'
     resource :sessions , only: [:create,:destroy]
     resources :systems,only: %w(edit update)
     resources :admins do
